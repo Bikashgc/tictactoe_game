@@ -103,6 +103,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )),
             ),
+          ),
+          RaisedButton(
+            onPressed: () {
+              resetGame();
+            },
+            child: Text("Reset Game"),
           )
         ],
       ),
