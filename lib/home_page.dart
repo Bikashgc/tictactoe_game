@@ -9,9 +9,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 // to add icon image
-  var circle = Icon(Icons.circle_outlined);
-  var cross = Icon(Icons.cancel_outlined);
-  var edit = Icon(Icons.edit_outlined);
+  var circle = Icon(
+    Icons.circle_outlined,
+    color: Colors.blue,
+    size: 80,
+  );
+  var cross = Icon(
+    Icons.cancel_outlined,
+    color: Colors.red,
+    size: 80,
+  );
+  var edit = Icon(Icons.check_box_outline_blank_outlined, size: 100);
 
   bool isCross = true;
   late String message;
@@ -159,12 +167,31 @@ class _HomePageState extends State<HomePage> {
                   )),
             ),
           ),
-          Text(message),
-          RaisedButton(
-            onPressed: () {
-              resetGame();
-            },
-            child: Text("Reset Game"),
+          Text(
+            message,
+            style: TextStyle(
+              fontSize: 40,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 80),
+            child: RaisedButton(
+              color: Colors.purple,
+              elevation: 5,
+              padding: EdgeInsets.symmetric(horizontal: 50),
+              onPressed: () {
+                resetGame();
+              },
+              child: Text(
+                "Reset Game",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                ),
+              ),
+            ),
           )
         ],
       ),
